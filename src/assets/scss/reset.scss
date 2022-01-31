@@ -1,0 +1,29 @@
+body, div, p, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, a, input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 0.75em;
+}
+
+html, body {
+  font-family: Microsoft Yahei;
+  color: #333333;
+  background-color: #F5F6F7FF;
+  font-size: 0.75em;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+input {
+  font: normal;
+}
+
+input:focus, a:focus {
+  outline: none;
+}

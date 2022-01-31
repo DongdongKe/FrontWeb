@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-frontend-service
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+    - host: contoso.
+      http:
+        paths:
+          - backend: # How the ingress will handle the requests
+              service:
+               name: web-frontend-service # Which service the request will be forwarded to
+               port:
+                 name: http # Which port in that service
+            path: / # Which path is this rule referring to

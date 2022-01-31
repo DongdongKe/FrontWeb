@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-frontend-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-frontend-service
+  template:
+    metadata:
+      labels:
+        app: web-frontend-service
+    spec:
+      containers:
+        - name: web-frontend-service
+          image: fhictbigdataregistry.azurecr.io/web-frontend-service
+          ports:
+            - containerPort: 80
+          env:
+          - name: TITLE
+            value: "Measurements Management"
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: web-frontend-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: web-frontend-service
